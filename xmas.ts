@@ -1,5 +1,5 @@
 export class xmasTree {
-  public draw(): [] {
-    return [];
+  public draw(): string[] {
+    return ["", ""];
   }
 }
