@@ -6,10 +6,18 @@ import { xmasTree } from "./xmas";
 // input < 0 => throw error
 // input float => round to closest integer
 
-describe("Given XmasTree", () => {
-  it("When the tree is initialized empty, Then the tree with height 2 is written", () => {
-    const xmas = new xmasTree();
-    const result = xmas.draw();
+describe("Given XmasTree, When the tree is initialized empty", () => {
+  let xmas: xmasTree;
+  let result: string[];
+  beforeEach(() => {
+    xmas = new xmasTree();
+    result = xmas.draw();
+  });
+  it("Then the tree with height 2 is written", () => {
     expect(result.length).toEqual(2);
+  });
+  it("Then the tree with height 2 has # # as stem", () => {
+    expect(result[0]).toEqual("#");
+    expect(result[1]).toEqual("#");
   });
 });
