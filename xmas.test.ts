@@ -30,10 +30,10 @@ describe("Given XmasTree", () => {
     });
   });
 
-  it(`When the tree is initialized with ${1}, Then the tree with stem as # # is drawn and tree crown with height 1 is drawn`, () => {
-    result = xmas.draw(1);
-    expect(result[0]).toEqual("#");
-    expect(result[1]).toEqual("#");
-    expect(result[2]).toEqual("#");
+  [1].forEach((height) => {
+    it(`When the tree is initialized with ${height}, Then the tip of the tree as '#' is drawn`, () => {
+      result = xmas.draw(height);
+      expect(result[0]).toEqual("#");
+    });
   });
 });
