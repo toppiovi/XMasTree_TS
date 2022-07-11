@@ -21,12 +21,16 @@ describe("Given XmasTree", () => {
       expect(result.length).toEqual(height + stemSize);
     });
   });
-  it("When the tree is initialized with 0, Then the tree with only stem as # # is drawn", () => {
-    result = xmas.draw(0);
-    expect(result[0]).toEqual("#");
-    expect(result[1]).toEqual("#");
+
+  [0, 1].forEach((height) => {
+    it(`When the tree is initialized with ${height}, Then the tree with stem of height 2 is drawn`, () => {
+      result = xmas.draw(height);
+      expect(result[result.length - 1]).toEqual("#");
+      expect(result[result.length - 2]).toEqual("#");
+    });
   });
-  it("When the tree is initialized with 1, Then the tree with stem as # # is drawn and tree crown with height 1 is drawn", () => {
+
+  it(`When the tree is initialized with ${1}, Then the tree with stem as # # is drawn and tree crown with height 1 is drawn`, () => {
     result = xmas.draw(1);
     expect(result[0]).toEqual("#");
     expect(result[1]).toEqual("#");
